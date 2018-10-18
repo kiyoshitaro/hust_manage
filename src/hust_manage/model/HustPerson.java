@@ -1,8 +1,8 @@
 package hust_manage.model;
 import java.util.Date;
-
+	
 public class HustPerson {
-	protected String idNumber;
+	protected String idNumber;	
 	protected String fullName;
 	protected Date birthDay;
 	public HustPerson(String idNumber, String fullName) {

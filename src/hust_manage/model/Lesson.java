@@ -1,13 +1,25 @@
 package hust_manage.model;
 import java.util.*;
 
-public class Class {
+public class Lesson {
 	private String courseId;
-//	private String studentId;
+	private String lessonId;
 	private String teacherId;
 	private Teacher teacher;
 	private Course course;
 	private List<Student> students;
+
+	public Lesson(String lessonId, String courseId, String teacherId){
+		this.courseId = courseId;
+		this.teacherId = teacherId;
+		this.lessonId = lessonId;
+	}
+	public String getLessonId() {
+		return lessonId;
+	}
+	public void setLessonId(String lessonId) {
+		this.lessonId = lessonId;
+	}
 	public String getCourseId() {
 		return courseId;
 	}
