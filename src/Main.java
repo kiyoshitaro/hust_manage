@@ -8,7 +8,7 @@ public class Main {
 	private static DataModel data = new DataModel();
 
 	public static void printList(Lesson lesson){
-
+		System.out.println("Danh sach lop " + lesson.getLessonId());
 		System.out.println("Giao vien cua lop: " + lesson.getTeacher().getFullName());
 		System.out.println("Danh sach sinh vien :");
 
@@ -57,6 +57,6 @@ public class Main {
 		// Course data = new Course("as","Hung", 3);
 		// DataModel data = new DataModel();
 		// Class tees = new Class("IT1234", "1234");
-		showListFromStudent("sv01");
+		showListFromStudent("sv11");
 	}
 }

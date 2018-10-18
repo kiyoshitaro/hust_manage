@@ -11,7 +11,7 @@ public class DataModel {
 		// TEACHER
 		this.teachers.add(new Teacher("gv01","Nguyen Thanh Hung",""));
 		this.teachers.add(new Teacher("gv02","Huynh Thanh Binh",""));
-		this.teachers.add(new Teacher("gv03","Huynh Quyet Thang",""));
+		this.teachers.add(new Teacher("gv03","Nguyen Xuan Thao",""));
 		
 		// STUDENT
 		this.students.add(new Student("sv01","Nguyen Tuan Hung"));
@@ -75,6 +75,14 @@ public class DataModel {
 		this.setUpStudentForLesson(this.lessons.get(1),this.students.get(19));
 		this.setUpStudentForLesson(this.lessons.get(1),this.students.get(20));
 		this.setUpStudentForLesson(this.lessons.get(1),this.students.get(21));
+
+		this.setUpLesson(new Lesson("lop03","MI1111", "gv03"));
+		this.setUpStudentForLesson(this.lessons.get(2),this.students.get(9));
+		this.setUpStudentForLesson(this.lessons.get(2),this.students.get(12));
+		this.setUpStudentForLesson(this.lessons.get(2),this.students.get(13));
+		this.setUpStudentForLesson(this.lessons.get(2),this.students.get(16));
+		this.setUpStudentForLesson(this.lessons.get(2),this.students.get(17));
+		this.setUpStudentForLesson(this.lessons.get(2),this.students.get(22));
 	}
 
 	public void setUpLesson(Lesson lesson){
@@ -99,7 +107,7 @@ public class DataModel {
 		}
 	}
 	public void setUpStudentForLesson(Lesson lesson ,Student student){
-		lesson.setStudents(students);
+		lesson.setStudent(student);
 		student.setLesson(lesson);
 	}
 

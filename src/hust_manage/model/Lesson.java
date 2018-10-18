@@ -7,7 +7,7 @@ public class Lesson {
 	private String teacherId;
 	private Teacher teacher;
 	private Course course;
-	private List<Student> students;
+	private List<Student> students = new ArrayList<>();
 
 	public Lesson(String lessonId, String courseId, String teacherId){
 		this.courseId = courseId;
@@ -49,6 +49,9 @@ public class Lesson {
 	}
 	public void setStudents(List<Student> students) {
 		this.students = students;
+	}
+	public void setStudent(Student student){
+		this.students.add(student);
 	}
 
 }
