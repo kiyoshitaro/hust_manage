@@ -7,15 +7,6 @@ import java.util.*;
 public class Main {
 	private static DataModel data = new DataModel();
 
-	public static void printList(Lesson lesson){
-		System.out.println("Danh sach lop " + lesson.getLessonId());
-		System.out.println("Giao vien cua lop: " + lesson.getTeacher().getFullName());
-		System.out.println("Danh sach sinh vien :");
-
-		for (Student student : lesson.getStudents()){
-			System.out.println("Sinh vien " + student.getFullName() + " MSSV: " + student.getIdNumber());
-		}
-	}
 
 	public static List<Lesson> getLessonsFromTeacher(String teacherId){
 		for (Teacher teacher : data.getTeachers()){
@@ -29,9 +20,8 @@ public class Main {
 	public static void showListFromTeacher(String teacherId){
 		List<Lesson> lessons = getLessonsFromTeacher(teacherId);
 		for (Lesson lesson : lessons){
-			printList(lesson);
+			lesson.printInfo();
 			System.out.println("-------------------------------");
-
 		}
 	}
 	
@@ -46,17 +36,31 @@ public class Main {
 	public static void showListFromStudent(String studentId){
 		List<Lesson> lessons = getLessonsFromStudent(studentId);
 		for (Lesson lesson : lessons){
-			printList(lesson);
+			lesson.printInfo();
 			System.out.println("-------------------------------");
+		}
+	}
 
+	public static List<Lesson> getLessonsFromCourse(String courseId){
+		for (Course course : data.getCourses()){
+			if(course.getCourseId() == courseId){
+				return course.getLessons();
+			}
+		}
+		return null;
+	}
+	public static void showListFromCourse(String courseId){
+		List<Lesson> lessons = getLessonsFromCourse(courseId);
+		for (Lesson lesson : lessons){
+			lesson.printInfo();
+			System.out.println("-------------------------------");
 		}
 	}
 
 	public static void main(String[] args) {
 		
-		// Course data = new Course("as","Hung", 3);
-		// DataModel data = new DataModel();
-		// Class tees = new Class("IT1234", "1234");
-		showListFromStudent("sv11");
+		// showListFromStudent("sv10");
+		// showListFromTeacher("gv01");
+		showListFromCourse("MI1111");
 	}
 }

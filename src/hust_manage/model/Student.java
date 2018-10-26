@@ -40,4 +40,8 @@ public class Student extends HustPerson {
 	public void setProgram(String program) {
 		this.program = program;
 	}
+
+	public void printInfo() {
+		System.out.println("Sinh vien " + this.getFullName() + " MSSV: " + this.getIdNumber());
+	}
 }

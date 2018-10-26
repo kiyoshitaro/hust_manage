@@ -54,4 +54,13 @@ public class Lesson {
 		this.students.add(student);
 	}
 
+	public void printInfo(){
+		System.out.println("Danh sach lop " + this.getLessonId());
+		System.out.println("Giao vien cua lop: " + this.getTeacher().getFullName());
+		System.out.println("Danh sach sinh vien :");
+
+		for (Student student : this.getStudents()){
+			student.printInfo();
+		}
+	}
 }

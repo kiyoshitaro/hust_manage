@@ -136,5 +136,11 @@ public class DataModel {
 	public void setLessons(List<Lesson> lessons) {
 		this.lessons = lessons;
 	}
+
+	public void printLessonInfo() {
+		for (Lesson lesson : lessons) {
+			lesson.printInfo();
+		}
+	}
 	
 }
